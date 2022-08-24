@@ -64,10 +64,6 @@ img.next-image {
   color: #69778c;
 }
 
-html * {
-  transition: 0.2s all linear;
-}
-
 hr {
   margin-bottom: 1.5em !important;
   margin-top: 1.5em !important;
