@@ -1,0 +1,36 @@
+---
+type: page
+title: Projects
+date: 2021-08-23
+---
+
+{/* importing all the repos */}
+import { useSSG } from "nextra/ssg";
+import Card from "../components/card.tsx";
+export const getStaticProps = ({ params }) => {
+var username = 'gu-does-git';
+return fetch(`https://api.github.com/users/${username}/repos`)
+.then((res) => res.json())
+.then((repos) => ({
+props: {
+ssg: {
+repos,
+},
+},
+revalidate: 10,
+}));
+};
+export const Stars = () => {
+const { repos } = useSSG();
+// Get the data from SSG, and render it as a component.
+return repos.map(repo => {
+return [
+
+<div key={repo.id} style={{ marginBottom: "1em" }}>
+  <Card repo={repo} />
+</div>
+] }); };
+
+## My Github Repositories
+
+<Stars />
