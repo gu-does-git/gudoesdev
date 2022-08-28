@@ -31,7 +31,7 @@ export default function Card(props) {
   const repo = props.repo;
 
   return (
-    <div className={styles.container}>
+    <div key={repo.id} className={styles.container}>
       <div className={styles.title}>
         {repo.full_name}
         <Link href={repo.html_url} target="_blank">
@@ -44,8 +44,8 @@ export default function Card(props) {
       <div className={styles.description}>{repo.description}</div>
 
       <div className={styles.icons}>
-        {repo.topics.map((topic) => (
-          <div>{icons[topic]}</div>
+        {repo.topics.map((topic, topic_index) => (
+          <div key={topic_index}>{icons[topic]}</div>
         ))}
       </div>
     </div>
