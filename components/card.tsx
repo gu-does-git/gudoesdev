@@ -11,6 +11,9 @@ import {
   SiNeovim,
   SiLinux,
   SiMarkdown,
+  SiEslint,
+  SiPrettier,
+  SiStylelint,
 } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -26,6 +29,9 @@ export default function Card(props) {
     neovim: <SiNeovim />,
     linux: <SiLinux />,
     markdown: <SiMarkdown />,
+    prettier: <SiPrettier />,
+    eslint: <SiEslint />,
+    stylelint: <SiStylelint />,
   };
 
   const repo = props.repo;
