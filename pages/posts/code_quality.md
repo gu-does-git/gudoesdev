@@ -40,9 +40,7 @@ Relax, I'll do a quick summary and then explain which tools I'm currently using,
 #### What is a linter?
 
 > Simply put, a linter is a tool that programmatically scans your code with the goal of finding issues that can lead to bugs or inconsistencies with code health and style. Some can even help fix them for you!
-> <small>
 > — <cite>Colby Fayock via [freeCodeCamp](https://www.freecodecamp.org/news/what-is-linting-and-how-can-it-save-you-time/)</cite>
-> </small>
 
 #### What is a formatter?
 
@@ -86,5 +84,5 @@ The more you know, the better.
 ---
 
 <small>
-Thanks for reading all the way through! ❤️
+<abbr title="Valeu Emi e Mi ❤️">Thanks</abbr> for reading all the way through! ❤️
 </small>
