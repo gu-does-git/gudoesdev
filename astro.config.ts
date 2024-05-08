@@ -1,18 +1,17 @@
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
-import remarkCollapse from "remark-collapse";
+import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
 import remarkToc from "remark-toc";
+import remarkCollapse from "remark-collapse";
+import sitemap from "@astrojs/sitemap";
+import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gudoes.dev/",
+  site: SITE.website,
   integrations: [
     tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
+      applyBaseStyles: false,
     }),
     react(),
     sitemap(),
@@ -31,6 +30,11 @@ export default defineConfig({
       theme: "one-dark-pro",
       wrap: true,
     },
-    extendDefaultPlugins: true,
   },
+  vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"],
+    },
+  },
+  scopedStyleStrategy: "where",
 });

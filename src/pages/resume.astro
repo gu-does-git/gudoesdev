@@ -1,5 +1,5 @@
 ---
-import { SITE } from "src/config";
+import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -18,7 +18,7 @@ var redirectUrl =
       <h1>Resume</h1>
       <LinkButton
         href={redirectUrl}
-        className="my-6 underline decoration-dashed underline-offset-8 text-lg"
+        className="my-6 text-lg underline decoration-dashed underline-offset-8"
       >
         Go to it
       </LinkButton>
@@ -30,15 +30,15 @@ var redirectUrl =
 
 <style>
   #main-content {
-    @apply max-w-3xl mx-auto flex-1 justify-center items-center flex;
+    @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
   }
   .wrapper {
-    @apply flex flex-col items-center justify-center mb-14;
+    @apply mb-14 flex flex-col items-center justify-center;
   }
   .wrapper h1 {
-    @apply font-bold text-9xl text-skin-accent;
+    @apply text-9xl font-bold text-skin-accent;
   }
   .wrapper p {
-    @apply text-2xl sm:text-3xl mt-4;
+    @apply mt-4 text-2xl sm:text-3xl;
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 author: Gustavo Rocha
-datetime: 2022-09-01T15:22:00Z
+pubDatetime: 2022-09-01T15:22:00Z
 title: Tools I use to code better
 slug: better-coding
 featured: true

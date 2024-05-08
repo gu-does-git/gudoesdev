@@ -1,6 +1,6 @@
 ---
 author: Gustavo Rocha
-datetime: 2022-08-22T12:58:53Z
+pubDatetime: 2022-08-22T12:58:53Z
 title: Hello World
 slug: hello-world
 featured: false
