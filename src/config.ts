@@ -1,13 +1,14 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://www.gudoes.dev/",
+  website: "https://gudoes.dev/",
   author: "Gustavo Rocha",
   desc: "My first blog!",
   title: "gudoesdev",
   ogImage: "default-og.png",
   lightAndDarkMode: true,
   postPerPage: 3,
+  scheduledPostMargin: 0,
 };
 
 export const LOCALE = {
