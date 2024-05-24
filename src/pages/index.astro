@@ -1,31 +1,86 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Demo from "../components/Demo.astro";
+import socials from "../content/etc/socials.json";
+
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Welcome to EN.">
-  <main class="mx-auto max-w-[800px] rounded-md px-4 py-8">
-    <h1
-      class="mb-8 text-center text-4xl font-bold md:text-6xl dark:text-neutral-100"
+<Layout title="Welcome!">
+  <main>
+    <div
+      class="relative z-20 mx-auto mt-16 w-full max-w-4xl px-7 md:mt-24 lg:mt-32 xl:px-0"
+      role="main"
+      aria-label="Welcome message"
     >
-      Welcome to <span class="bg-gradient-to-r from-blue-500 to-purple-500"
-        >EN</span
-      >
-    </h1>
-    <div class="prose mx-auto mb-8 dark:prose-invert">
-      <p>
-        To get started, open the directory <code
-          class="rounded bg-gray-100 px-1 py-0.5 font-mono dark:bg-neutral-700"
-          >src/pages</code
-        >
-        in your project.
-      </p>
-      <p>
-        <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-      </p>
+      <div class="flex flex-col items-center md:flex-row">
+        <div class="relative w-full md:w-2/3">
+          <h1
+            class="mb-5 text-4xl font-bold leading-tight dark:text-white md:text-4xl lg:text-6xl"
+            id="welcome-message"
+          >
+            Hello, I'm Gustavo!
+          </h1>
+          <p
+            class="mb-6 text-base text-neutral-600 dark:text-neutral-400"
+            aria-label="I'm a software engineer living in Brazil. I focus primarily on Web development. Currently working at Aoop Cloud Solutions."
+          >
+            I'm a software engineer living in Brazil.
+            <br class="hidden lg:block" />
+            I focus primarily on Web development.
+            <br class="hidden lg:block" />
+            Currently working at
+            <a
+              class="decoration-clone text-green-600 underline dark:text-green-500"
+              href="https://aoop.com.br/"
+              aria-label="Aoop Cloud Solutions"
+              target="_blank"
+            >
+              Aoop Cloud Solutions
+            </a>
+          </p>
+          <p
+            class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200"
+            aria-label="I can help you out with"
+          >
+            I can help you out with:
+          </p>
+          <ul
+            class="mb-6 list-inside list-disc space-y-[3px] py-2 text-sm text-neutral-500 dark:text-neutral-400"
+          >
+            <li>ServiceNow Consulting</li>
+            <li>Website Development</li>
+            <li>Mobile App Development</li>
+            <li>Product Management</li>
+            <li>and more...</li>
+          </ul>
+          <div class="social-wrapper flex flex-row items-center">
+            <div
+              class="social-links mr-3 font-semibold text-neutral-800 dark:text-neutral-200"
+              aria-label="Social Links"
+            >
+              Social Links:
+            </div>
+            <div class="social-icons flex gap-2">
+              {
+                socials.map(item => (
+                  <a
+                    href={item.href}
+                    title={`${item.name} Profile`}
+                    target="_blank"
+                    aria-label={`${item.name} Profile`}
+                    class="transition-colors hover:text-green-600 dark:hover:text-green-500"
+                  >
+                    <Icon name={item.icon} class="h-7 w-7" />
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Collections List -->
-    <Demo />
+    <!-- <Demo /> -->
   </main>
 </Layout>

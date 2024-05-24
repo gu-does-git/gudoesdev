@@ -1,0 +1,17 @@
+[
+  {
+    "href": "https://github.com/gu-does-git",
+    "icon": "uim:github",
+    "name": "Github"
+  },
+  {
+    "href": "https://www.linkedin.com/in/gu-does-networking/",
+    "icon": "uim:linkedin",
+    "name": "Linkedin"
+  },
+  {
+    "href": "mailto:gu.does.dev@gmail.com",
+    "icon": "uim:comment-alt-dots",
+    "name": "Email"
+  }
+]
