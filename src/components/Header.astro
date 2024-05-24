@@ -2,6 +2,7 @@
 import Logo from "./Header/Logo.astro";
 import ThemeSwitcher from "./Header/ThemeSwitcher.astro";
 import Menu from "./Header/Menu.astro";
+import LanguageSwitcher from "./Header/LanguageSwitcher";
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -16,6 +17,7 @@ import Menu from "./Header/Menu.astro";
     >
       <Menu />
       <ThemeSwitcher />
+      <LanguageSwitcher currentLocale={Astro.currentLocale} />
     </nav>
   </div>
 </header>
@@ -41,18 +43,31 @@ import Menu from "./Header/Menu.astro";
       "backdrop-blur-2xl",
     ];
     const unstickyClassesContainer = ["border-transparent"];
-    if (headerElement && headerElement.firstElementChild && menuElement && menuElement.firstElementChild) {
+    if (
+      headerElement &&
+      headerElement.firstElementChild &&
+      menuElement &&
+      menuElement.firstElementChild
+    ) {
       console.log("evaluating header position");
       if (window.scrollY > 16) {
-        headerElement.firstElementChild.classList.add(...stickyClassesContainer);
-        headerElement.firstElementChild.classList.remove(...unstickyClassesContainer);
+        headerElement.firstElementChild.classList.add(
+          ...stickyClassesContainer
+        );
+        headerElement.firstElementChild.classList.remove(
+          ...unstickyClassesContainer
+        );
         headerElement.classList.add(...stickyClasses);
         headerElement.classList.remove(...unstickyClasses);
         menuElement.classList.add("top-[56px]");
         menuElement.classList.remove("top-[75px]");
       } else {
-        headerElement.firstElementChild.classList.remove(...stickyClassesContainer);
-        headerElement.firstElementChild.classList.add(...unstickyClassesContainer);
+        headerElement.firstElementChild.classList.remove(
+          ...stickyClassesContainer
+        );
+        headerElement.firstElementChild.classList.add(
+          ...unstickyClassesContainer
+        );
         headerElement.classList.add(...unstickyClasses);
         headerElement.classList.remove(...stickyClasses);
         menuElement.classList.remove("top-[56px]");
