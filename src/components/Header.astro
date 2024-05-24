@@ -1,24 +1,33 @@
 ---
+import Logo from "../components/Logo.astro";
+import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
 const menus = [
   {
     name: "Home",
-    url: "/",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/")
+      : "/",
   },
   {
     name: "Posts",
-    url: "/posts",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/posts")
+      : "/posts",
   },
   {
     name: "Projects",
-    url: "/projects",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/projects")
+      : "/projects",
   },
   {
     name: "About",
-    url: "/about",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/about")
+      : "/about",
   },
 ];
-import Logo from "../components/Logo.astro";
-import { Icon } from "astro-icon/components";
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -58,7 +67,7 @@ import { Icon } from "astro-icon/components";
       </div>
       <button
         id="themeButton"
-        class="rounded-lg p-0 text-xl"
+        class="ml-3 rounded-lg p-0 text-xl"
         aria-label="Toggle theme"
       >
         <Icon
@@ -73,6 +82,8 @@ import { Icon } from "astro-icon/components";
     </nav>
   </div>
 </header>
+
+<!-- Theme script function for the header -->
 <script>
   function handleClick() {
     // Get current theme
@@ -91,6 +102,8 @@ import { Icon } from "astro-icon/components";
     themeButton.addEventListener("click", handleClick);
   }
 </script>
+
+<!-- Sticky header script -->
 <script>
   const stickyHeaderFuncionality = () => {
     window.addEventListener("scroll", () => {

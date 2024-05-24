@@ -7,10 +7,12 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const lang = Astro.currentLocale;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <Themes />
     <meta charset="UTF-8" />
@@ -20,7 +22,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-white antialiased dark:bg-neutral-950">
     <Header />
     <slot />
   </body>
