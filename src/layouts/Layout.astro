@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Themes from "astro-themes";
+import PageCustomEffect from "../components/PageCustomEffect.astro";
 
 interface Props {
   title: string;
@@ -23,6 +24,7 @@ const lang = Astro.currentLocale;
     <title>{title}</title>
   </head>
   <body class="bg-white antialiased dark:bg-neutral-950">
+    <PageCustomEffect />
     <Header />
     <slot />
   </body>
