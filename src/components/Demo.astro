@@ -2,25 +2,31 @@
 import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts", ({ id }) => {
   if (Astro.currentLocale) {
-    return Astro.currentLocale === "en" ? id.indexOf("/") == -1 : id.includes(Astro.currentLocale);
+    return Astro.currentLocale === "en"
+      ? id.indexOf("/") == -1
+      : id.includes(Astro.currentLocale);
   } else {
     return false; // or handle this case as you see fit
   }
 });
 ---
+
 <div>
-    <h1 class="text-3xl font-bold">Posts</h1>
-    <hr class="my-4" />
-    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-        {
-            allPosts.map((post) => (
-            <li class="link-card">
-                <a href="https://docs.astro.build/" class="block w-full p-4 text-center text-white bg-gradient-to-r from-slate-800 to-slate-500 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold">{post.data.title}</h2>
-                    <p class="text-sm mt-2">{post.data.description}</p>
-                </a>
-            </li>
-            ))
-        }
-    </ul>
+  <h1 class="text-3xl font-bold">Posts</h1>
+  <hr class="my-4" />
+  <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {
+      allPosts.map(post => (
+        <li class="link-card">
+          <a
+            href="https://docs.astro.build/"
+            class="block w-full rounded-lg bg-gradient-to-r from-slate-800 to-slate-500 p-4 text-center text-white shadow-md"
+          >
+            <h2 class="text-2xl font-semibold">{post.data.title}</h2>
+            <p class="mt-2 text-sm">{post.data.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </div>

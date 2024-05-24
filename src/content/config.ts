@@ -16,10 +16,6 @@ import { z, defineCollection } from "astro:content";
       image: z.string(),
       description: z.string(),
       canonicalURL: z.string().optional(),
-      // image: z.object({
-        //   url: z.string(),
-        //   alt: z.string()
-        // }),
       })
     }),
 };
