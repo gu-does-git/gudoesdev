@@ -9,6 +9,16 @@ const allPosts = await getCollection("posts", ({ id }) => {
     return false; // or handle this case as you see fit
   }
 });
+
+const allProjects = await getCollection("projects", ({ id }) => {
+  if (Astro.currentLocale) {
+    return Astro.currentLocale === "en"
+      ? id.indexOf("/") == -1
+      : id.includes(Astro.currentLocale);
+  } else {
+    return false; // or handle this case as you see fit
+  }
+});
 ---
 
 <div>
@@ -24,6 +34,26 @@ const allPosts = await getCollection("posts", ({ id }) => {
           >
             <h2 class="text-2xl font-semibold">{post.data.title}</h2>
             <p class="mt-2 text-sm">{post.data.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<div>
+  <h1 class="text-3xl font-bold">Projects</h1>
+  <hr class="my-4" />
+  <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+    {
+      allProjects.map(project => (
+        <li class="link-card">
+          <a
+            href="https://docs.astro.build/"
+            class="block w-full rounded-lg bg-gradient-to-r from-slate-800 to-slate-500 p-4 text-center text-white shadow-md"
+          >
+            <h2 class="text-2xl font-semibold">{project.data.name}</h2>
+            <p class="mt-2 text-sm">{project.data.description}</p>
           </a>
         </li>
       ))
