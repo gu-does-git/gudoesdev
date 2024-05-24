@@ -1,24 +1,31 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Demo from '../../components/Demo.astro';
+import Layout from "../../layouts/Layout.astro";
+import Demo from "../../components/Demo.astro";
 ---
- 
+
 <Layout title="Welcome to PT-BR.">
-	<main class="max-w-[800px] mx-auto py-8 px-4 bg-white rounded-md">
-		<h1 class="text-4xl font-bold text-center mb-8">Welcome to <span class="bg-gradient-to-r from-blue-500 to-purple-500">PT-BR</span></h1>
-		<div class="prose prose-blue mx-auto mb-8">
-			<p>
-				To get started, open the directory <code class="px-1 py-0.5 font-mono bg-gray-100 rounded">src/pages</code> in your project.
-			</p>
-			<p>
-				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-			</p>
-		</div>
+  <main class="mx-auto max-w-[800px] rounded-md px-4 py-8">
+    <h1
+      class="mb-8 text-center text-4xl font-bold md:text-6xl dark:text-neutral-100"
+    >
+      Welcome to <span class="bg-gradient-to-r from-blue-500 to-purple-500"
+        >PT-BR</span
+      >
+    </h1>
+    <div class="prose mx-auto mb-8 dark:prose-invert">
+      <p>
+        To get started, open the directory <code
+          class="rounded bg-gray-100 px-1 py-0.5 font-mono dark:bg-neutral-700"
+          >src/pages</code
+        >
+        in your project.
+      </p>
+      <p>
+        <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+      </p>
+    </div>
 
-		<!-- Collections List -->
-		<Demo />
-	</main>
+    <!-- Collections List -->
+    <Demo />
+  </main>
 </Layout>
-
-
-
