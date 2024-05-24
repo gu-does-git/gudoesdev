@@ -1,0 +1,47 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+const menus = [
+  {
+    name: "Home",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/")
+      : "/",
+  },
+  {
+    name: "Posts",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/posts")
+      : "/posts",
+  },
+  {
+    name: "Projects",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/projects")
+      : "/projects",
+  },
+  {
+    name: "About",
+    url: Astro.currentLocale
+      ? getRelativeLocaleUrl(Astro.currentLocale, "/about")
+      : "/about",
+  },
+];
+---
+
+<div
+  id="menu"
+  class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-base"
+>
+  {
+    menus.map(menu => {
+      return (
+        <a
+          href={menu.url}
+          class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
+        >
+          {menu.name}
+        </a>
+      );
+    })
+  }
+</div>
