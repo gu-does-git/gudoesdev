@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Themes from "astro-themes";
 import PageCustomEffect from "../components/PageCustomEffect.astro";
+import { SITE } from "../config";
 
 interface Props {
   title: string;
@@ -17,13 +18,18 @@ const lang = Astro.currentLocale;
   <head>
     <Themes />
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- General Meta Tags -->
+    <title>{`${SITE.title} | ${title}`}</title>
+    <meta name="title" content={`${SITE.title} | ${title}`} />
+    <meta name="description" content={SITE.desc} />
+    <meta name="author" content={SITE.author} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
-  <body class="bg-white antialiased dark:bg-neutral-950">
+  <body class="scroll-smooth bg-white antialiased dark:bg-neutral-950">
     <PageCustomEffect />
     <Header />
     <slot />
