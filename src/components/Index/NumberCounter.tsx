@@ -56,7 +56,7 @@ export default function NumberCounter({
   }, [end, start, duration]);
 
   return (
-    <div ref={elementRef} class="text-4xl font-bold text-green-600 dark:text-green-500">
+    <div ref={elementRef} className="text-4xl font-bold text-green-600 dark:text-green-500">
       {count}
       {suffix}
     </div>

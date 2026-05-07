@@ -77,7 +77,7 @@ const postsData = allPosts.map(post => ({
               </a>
             </div>
             <div class="flex flex-wrap items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
-              <time datetime={post.data.pubDatetime}>
+              <time datetime={new Date(post.data.pubDatetime).toISOString()}>
                 {new Date(post.data.pubDatetime).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
