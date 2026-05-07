@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="mx-auto w-full max-w-4xl px-7 py-8 lg:py-12 xl:px-0">
+  <div class="grid grid-cols-3 gap-6 md:grid-cols-6">
+    {
+      [
+        { name: "ServiceNow", icon: "servicenow", isImage: true },
+        { name: "JavaScript", icon: "logos:javascript" },
+        { name: "TypeScript", icon: "logos:typescript-icon" },
+        { name: "React", icon: "logos:react" },
+        { name: "Astro", icon: "logos:astro-icon" },
+        { name: "Tailwind", icon: "logos:tailwindcss-icon" },
+        { name: "Node.js", icon: "logos:nodejs-icon" },
+        { name: "HTML5", icon: "logos:html-5" },
+        { name: "CSS3", icon: "logos:css-3" },
+      ].map(tech => (
+        <div class="tech-card flex flex-col items-center gap-2">
+          <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-neutral-100 p-2 transition-all duration-300 hover:scale-110 dark:bg-neutral-800">
+            {tech.isImage ? (
+              <img src={`/${tech.icon}.svg`} alt={tech.name} class="h-full w-full object-contain" />
+            ) : (
+              <Icon name={tech.icon} class="h-full w-full" />
+            )}
+          </div>
+          <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400">
+            {tech.name}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+

@@ -3,7 +3,87 @@ import Layout from "../../layouts/Layout.astro";
 import socials from "../../content/etc/socials.json";
 
 import { Icon } from "astro-icon/components";
+import Separator from "../../components/Index/Separator.astro";
+import Projects from "../../components/Index/Projects.astro";
+import StatisticsPT from "../../components/Index/StatisticsPT.astro";
+import TechStack from "../../components/Index/TechStack.astro";
 ---
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .hero-title {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .hero-description {
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  .help-list li {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .help-list li:nth-child(1) { animation-delay: 0.2s; }
+  .help-list li:nth-child(2) { animation-delay: 0.25s; }
+  .help-list li:nth-child(3) { animation-delay: 0.3s; }
+  .help-list li:nth-child(4) { animation-delay: 0.35s; }
+  .help-list li:nth-child(5) { animation-delay: 0.4s; }
+
+  .social-wrapper {
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.45s;
+    opacity: 0;
+  }
+
+  .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    transform: translateY(-4px);
+  }
+
+  .company-link {
+    transition: all 0.3s ease;
+  }
+
+  .company-link:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+</style>
 
 <Layout title="Bem-vindo!">
   <main>
@@ -12,16 +92,16 @@ import { Icon } from "astro-icon/components";
       role="main"
       aria-label="Bem-vindo!"
     >
-      <div class="flex flex-col items-center md:flex-row">
+      <div class="flex flex-col gap-12 md:flex-row md:gap-8">
         <div class="relative w-full md:w-2/3">
           <h1
-            class="mb-5 text-4xl font-bold leading-tight dark:text-white md:text-4xl lg:text-6xl"
+            class="hero-title mb-5 text-4xl font-bold leading-tight dark:text-white md:text-4xl lg:text-6xl"
           >
             Olá, sou o Gustavo!
           </h1>
           <p
-            class="mb-6 text-base text-neutral-600 dark:text-neutral-400"
-            aria-label="Sou um engenheiro de software morando no Brasil. Meu foco principal é desenvolvimento web."
+            class="hero-description mb-6 text-base text-neutral-600 dark:text-neutral-400"
+            aria-label="Sou um engenheiro de software morando no Brasil. Meu foco principal é desenvolvimento web. Atualmente trabalhando na Chaintech."
           >
             Sou um engenheiro de software morando no Brasil.
             <br class="hidden lg:block" />
@@ -29,12 +109,12 @@ import { Icon } from "astro-icon/components";
             <br class="hidden lg:block" />
             Atualmente trabalhando na
             <a
-              class="decoration-clone text-green-600 underline transition-colors hover:text-green-700 dark:text-green-500 dark:hover:text-green-400"
-              href="https://aoop.com.br/"
-              aria-label="Aoop Cloud Solutions"
+              class="company-link decoration-clone text-green-600 underline transition-colors hover:text-green-700 dark:text-green-500 dark:hover:text-green-400"
+              href="https://chaintech.com.br/"
+              aria-label="Chaintech"
               target="_blank"
             >
-              Aoop Cloud Solutions
+              Chaintech
             </a>
           </p>
           <p
@@ -44,7 +124,7 @@ import { Icon } from "astro-icon/components";
             Eu posso te ajudar com:
           </p>
           <ul
-            class="mb-6 list-inside list-disc space-y-[3px] py-2 text-sm text-neutral-500 dark:text-neutral-400"
+            class="help-list mb-6 list-inside list-disc space-y-[3px] py-2 text-sm text-neutral-500 dark:text-neutral-400"
           >
             <li>Consultoria do ServiceNow</li>
             <li>Desenvolvimento de sites</li>
@@ -52,32 +132,60 @@ import { Icon } from "astro-icon/components";
             <li>Gerenciamento de produtos</li>
             <li>e muito mais...</li>
           </ul>
-          <div class="social-wrapper flex flex-row items-center">
-            <div
-              class="social-links mr-3 font-semibold text-neutral-800 dark:text-neutral-200"
-              aria-label="Links sociais"
-            >
-              Links sociais:
-            </div>
-            <div class="social-icons flex gap-2">
-              {
-                socials.map(item => (
-                  <a
-                    href={item.href}
-                    title={`Perfil do ${item.name}`}
-                    target="_blank"
-                    aria-label={`Perfil do ${item.name}`}
-                    class="transition-colors hover:text-green-600 dark:hover:text-green-500"
-                  >
-                    <Icon name={item.icon} class="h-7 w-7" />
-                  </a>
-                ))
-              }
+          <div class="social-wrapper flex flex-col gap-6">
+            <div class="flex flex-row items-center gap-4">
+              <div
+                class="social-links font-semibold text-neutral-800 dark:text-neutral-200"
+                aria-label="Links sociais"
+              >
+                Links sociais:
+              </div>
+              <div class="social-icons flex gap-3">
+                {
+                  socials.map(item => (
+                    <a
+                      href={item.href}
+                      title={`Perfil do ${item.name}`}
+                      target="_blank"
+                      aria-label={`Perfil do ${item.name}`}
+                      class="transition-colors hover:text-green-600 dark:hover:text-green-500"
+                    >
+                      <Icon name={item.icon} class="h-7 w-7" />
+                    </a>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
+        <div class="flex w-full items-center justify-center md:w-1/3">
+          <a
+            href="mailto:gustavosantos361@gmail.com"
+            class="w-fit rounded-lg border-2 border-green-600 px-6 py-2 font-semibold text-green-600 transition-all duration-300 hover:bg-green-600 hover:text-white dark:border-green-500 dark:text-green-500 dark:hover:bg-green-500 dark:hover:text-neutral-900"
+          >
+            Entre em Contato
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- Statistics Separator -->
+    <Separator title="Meu Trabalho" />
+
+    <!-- Statistics -->
+    <StatisticsPT />
+
+    <!-- Tech Stack Separator -->
+    <Separator title="Tecnologias" />
+
+    <!-- Tech Stack -->
+    <TechStack />
+
+    <!-- Projects Separator -->
+    <Separator title="Meus Projetos" />
+
+    <!-- Meus Projetos -->
+    <Projects />
 
     <!-- Collections List -->
     <!-- <Demo /> -->

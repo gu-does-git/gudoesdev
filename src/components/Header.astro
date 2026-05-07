@@ -3,6 +3,47 @@ import Logo from "./Header/Logo.astro";
 import ThemeSwitcher from "./Header/ThemeSwitcher.astro";
 import Menu from "./Header/Menu.astro";
 import LanguageSwitcher from "./Header/LanguageSwitcher";
+import { getCollection } from "astro:content";
+
+interface Props {
+  postId?: string;
+}
+
+const { postId } = Astro.props;
+
+// Build a posts map for language switching
+let postsMap: Record<string, string> = {};
+let tagMap: Record<string, string> = {};
+
+const allPosts = await getCollection("posts");
+allPosts.forEach(post => {
+  postsMap[post.id] = post.slug;
+});
+
+// Helper to create slug from tag (matches tag page generation)
+const createTagSlug = (tag: string) => {
+  return tag.toLowerCase().replace(/\s+/g, "-");
+};
+
+// Build tag mapping between languages
+const enPosts = allPosts.filter(p => !p.id.includes("pt-br"));
+const ptPosts = allPosts.filter(p => p.id.includes("pt-br"));
+
+// Match posts by ID (e.g., "1" with "pt-br/1")
+enPosts.forEach(enPost => {
+  const ptPost = ptPosts.find(p => p.id.replace("pt-br/", "") === enPost.id);
+  if (ptPost && enPost.data.tags && ptPost.data.tags) {
+    enPost.data.tags.forEach((enTag, idx) => {
+      const ptTag = ptPost.data.tags?.[idx];
+      if (ptTag) {
+        const enSlug = createTagSlug(enTag);
+        const ptSlug = createTagSlug(ptTag);
+        tagMap[ptSlug] = enSlug;
+        tagMap[enSlug] = ptSlug;
+      }
+    });
+  }
+});
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -17,7 +58,14 @@ import LanguageSwitcher from "./Header/LanguageSwitcher";
     >
       <Menu />
       <ThemeSwitcher />
-      <LanguageSwitcher currentLocale={Astro.currentLocale} />
+      <LanguageSwitcher
+        client:load
+        currentLocale={Astro.currentLocale}
+        pathname={Astro.url.pathname}
+        postId={postId}
+        postsMap={postsMap}
+        tagMap={tagMap}
+      />
     </nav>
   </div>
 </header>

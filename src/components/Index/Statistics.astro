@@ -1,0 +1,55 @@
+---
+import NumberCounter from "./NumberCounter";
+---
+
+<style>
+  .stat-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stat-item:nth-child(1) { animation-delay: 0.1s; }
+  .stat-item:nth-child(2) { animation-delay: 0.2s; }
+  .stat-item:nth-child(3) { animation-delay: 0.3s; }
+  .stat-item:nth-child(4) { animation-delay: 0.4s; }
+</style>
+
+<div class="mx-auto w-full max-w-4xl px-7 py-8 lg:py-12 xl:px-0">
+  <div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
+    <div class="stat-item flex flex-col items-center text-center">
+      <div class="mb-2 transition-all duration-300">
+        <NumberCounter client:load start={1} end={4} suffix="+" duration={2} />
+      </div>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Years of Experience</p>
+    </div>
+    <div class="stat-item flex flex-col items-center text-center">
+      <div class="mb-2 transition-all duration-300">
+        <NumberCounter client:load start={1} end={3} duration={2} />
+      </div>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Certifications</p>
+    </div>
+    <div class="stat-item flex flex-col items-center text-center">
+      <div class="mb-2 transition-all duration-300">
+        <NumberCounter client:load start={1} end={10} suffix="+" duration={2} />
+      </div>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Projects Delivered</p>
+    </div>
+    <div class="stat-item flex flex-col items-center text-center">
+      <div class="mb-2 transition-all duration-300">
+        <NumberCounter client:load start={1} end={100} suffix="%" duration={2} />
+      </div>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Dedication</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import SearchProjects from "../../components/SearchProjects";
+
+const allProjects = (
+  await getCollection("projects", ({ id }) => {
+    return id.indexOf("/") === -1;
+  })
+).sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return a.data.name.localeCompare(b.data.name);
+});
+
+const projectsData = allProjects.map(project => ({
+  id: project.id,
+  slug: project.slug,
+  name: project.data.name,
+  description: project.data.description,
+  url: project.data.url,
+  tags: project.data.tags,
+}));
+---
+
+<Layout title="Projects">
+  <main class="mx-auto max-w-4xl px-7 py-16 lg:py-24 lg:px-0">
+    <div class="mb-12">
+      <h1 class="mb-4 text-4xl font-bold dark:text-white lg:text-5xl">
+        Projects
+      </h1>
+      <p class="text-base text-neutral-600 dark:text-neutral-400">
+        A collection of projects I've worked on. From learning projects to full-featured applications.
+      </p>
+    </div>
+
+    <SearchProjects client:load projects={projectsData} locale="en" />
+  </main>
+</Layout>

@@ -1,0 +1,111 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts", ({ id, data: { draft } }) => {
+    return id.indexOf("/") === -1 && !draft;
+  });
+
+  const tagSet = new Set<string>();
+  allPosts.forEach(post => {
+    post.data.tags?.forEach(tag => {
+      tagSet.add(tag.toLowerCase().replace(/\s+/g, "-"));
+    });
+  });
+
+  return Array.from(tagSet).map(tag => ({
+    params: { tag },
+  }));
+}
+
+const { tag } = Astro.params;
+const decodedTag = tag!.replace(/-/g, " ");
+
+const allPosts = (
+  await getCollection("posts", ({ id, data: { draft } }) => {
+    return id.indexOf("/") === -1 && !draft;
+  })
+).filter(post =>
+  post.data.tags?.some(
+    t => t.toLowerCase().replace(/\s+/g, "-") === tag
+  )
+).sort(
+  (a, b) =>
+    new Date(b.data.pubDatetime).getTime() -
+    new Date(a.data.pubDatetime).getTime()
+);
+
+const postsData = allPosts.map(post => ({
+  id: post.id,
+  slug: post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  pubDatetime: post.data.pubDatetime.toISOString(),
+  author: post.data.author,
+  tags: post.data.tags,
+}));
+---
+
+<Layout title={`Tag: ${decodedTag}`}>
+  <main class="mx-auto max-w-4xl px-7 py-16 lg:py-24 lg:px-0">
+    <div class="mb-12">
+      <a
+        href="/posts/tags"
+        class="mb-4 inline-flex text-sm font-medium text-neutral-600 transition-colors hover:text-green-600 dark:text-neutral-400 dark:hover:text-green-500"
+      >
+        ← Back to tags
+      </a>
+      <h1 class="mb-4 text-4xl font-bold dark:text-white lg:text-5xl">
+        {decodedTag}
+      </h1>
+      <p class="text-base text-neutral-600 dark:text-neutral-400">
+        {allPosts.length}
+        {allPosts.length === 1 ? "post" : "posts"} with this tag.
+      </p>
+    </div>
+
+    {allPosts.length > 0 ? (
+      <div class="space-y-8">
+        {allPosts.map(post => (
+          <article class="flex flex-col gap-3 border-b border-neutral-200 pb-8 transition-colors hover:border-neutral-300 dark:border-neutral-700 dark:hover:border-neutral-600">
+            <div class="flex flex-col gap-1">
+              <a href={`/posts/${post.slug}`}>
+                <h2 class="text-2xl font-semibold text-neutral-900 transition-colors hover:text-green-600 dark:text-neutral-100 dark:hover:text-green-500">
+                  {post.data.title}
+                </h2>
+              </a>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <time datetime={post.data.pubDatetime}>
+                {new Date(post.data.pubDatetime).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              <span>•</span>
+              <span>{post.data.author}</span>
+            </div>
+            <p class="text-base text-neutral-600 dark:text-neutral-400">
+              {post.data.description}
+            </p>
+            {post.data.tags && post.data.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map(postTag => (
+                  <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                    {postTag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-neutral-600 dark:text-neutral-400">
+        No posts found with this tag.
+      </p>
+    )}
+  </main>
+</Layout>

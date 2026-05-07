@@ -1,0 +1,191 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <main class="mx-auto max-w-4xl px-7 py-16 lg:py-24 lg:px-0">
+    <div class="mb-12">
+      <h1 class="text-4xl font-bold dark:text-white lg:text-5xl">
+        About Me
+      </h1>
+    </div>
+
+    <!-- Two-column: Avatar + Bio/About -->
+    <div class="mb-12 flex flex-col gap-12 md:flex-row md:gap-12 md:items-center">
+      <!-- Avatar -->
+      <div class="flex justify-center md:justify-start flex-shrink-0">
+        <img
+          src="https://github.com/gu-does-git.png"
+          alt="Gustavo Rocha"
+          class="h-32 w-32 rounded-full border-2 border-neutral-200 dark:border-neutral-700"
+        />
+      </div>
+
+      <!-- Bio/About -->
+      <div class="flex flex-col gap-6 flex-1">
+        <!-- Header -->
+        <div>
+          <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+            Gustavo Rocha
+          </h2>
+          <p class="mt-1 text-base text-neutral-600 dark:text-neutral-400">
+            ServiceNow Technical Consultant | CSA, CAD
+          </p>
+        </div>
+
+        <!-- Bio -->
+        <div>
+          <h3 class="mb-3 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+            About
+          </h3>
+          <p class="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Specialized ServiceNow Technical Consultant at Chaintech with a proven track record of implementing and customizing ServiceNow solutions for enterprise clients. Experienced in technical consulting, system architecture, and leading cross-functional teams. Always seeking growth and staying ahead of industry trends.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-width sections -->
+    <div class="flex flex-col gap-12">
+      <!-- Experience -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Experience
+        </h3>
+        <div class="flex flex-col gap-3">
+          <div class="rounded-lg bg-green-50 p-4 dark:bg-green-900/30">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                <h4 class="font-medium text-neutral-900 dark:text-neutral-100">
+                  Chaintech
+                </h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  Senior Technical Consultant
+                </p>
+              </div>
+              <span class="text-xs font-medium text-green-600 dark:text-green-400 whitespace-nowrap">
+                Jan 2025 - Now
+              </span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-green-50 p-4 dark:bg-green-900/30">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                <h4 class="font-medium text-neutral-900 dark:text-neutral-100">
+                  Aoop Cloud Solutions
+                </h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  Technical Consultant
+                </p>
+              </div>
+              <span class="text-xs font-medium text-green-600 dark:text-green-400 whitespace-nowrap">
+                May 2024 - Jan 2025
+              </span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-green-50 p-4 dark:bg-green-900/30">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                <h4 class="font-medium text-neutral-900 dark:text-neutral-100">
+                  Accenture Brasil
+                </h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  Software Engineering Senior Analyst
+                </p>
+              </div>
+              <span class="text-xs font-medium text-green-600 dark:text-green-400 whitespace-nowrap">
+                Jun 2022 - May 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Education
+        </h3>
+        <div class="flex flex-col gap-3">
+          <div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                <p class="font-medium text-neutral-900 dark:text-neutral-100">
+                  ETEC Doutora Ruth Cardoso
+                </p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  Technical Education - Systems Development
+                </p>
+              </div>
+              <span class="text-xs font-medium text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                2018 - 2019
+              </span>
+            </div>
+          </div>
+          <div class="rounded-lg bg-blue-50 p-4 dark:bg-blue-900/30">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                <p class="font-medium text-neutral-900 dark:text-neutral-100">
+                  E.E. Professor Benevenuto Madureira
+                </p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  High School
+                </p>
+              </div>
+              <span class="text-xs font-medium text-blue-600 dark:text-blue-400 whitespace-nowrap">
+                2014 - 2017
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Certifications
+        </h3>
+        <div class="flex flex-col gap-3">
+          <div class="rounded-lg bg-purple-50 p-4 dark:bg-purple-900/30">
+            <p class="font-medium text-neutral-900 dark:text-neutral-100">
+              Certified Application Developer (CAD)
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Issued by ServiceNow
+            </p>
+          </div>
+          <div class="rounded-lg bg-purple-50 p-4 dark:bg-purple-900/30">
+            <p class="font-medium text-neutral-900 dark:text-neutral-100">
+              Cloud Service Associate (CSA)
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Issued by ServiceNow
+            </p>
+          </div>
+          <div class="rounded-lg bg-purple-50 p-4 dark:bg-purple-900/30">
+            <p class="font-medium text-neutral-900 dark:text-neutral-100">
+              First Certificate in English
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Issued by Cambridge English
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+          Skills & Technologies
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          {["ServiceNow", "JavaScript", "HTML5", "CSS3", "PHP", "AngularJS", "Bootstrap", "WordPress", "CodeIgniter", "jQuery", "SCSS", "Technical Consulting"].map(skill => (
+            <span class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

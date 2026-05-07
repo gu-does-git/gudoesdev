@@ -10,6 +10,11 @@
     "name": "Linkedin"
   },
   {
+    "href": "https://www.credly.com/users/gustavo-rocha.75e43f48",
+    "icon": "arcticons:credly",
+    "name": "Credly"
+  },
+  {
     "href": "mailto:gu.does.dev@gmail.com",
     "icon": "uim:comment-alt-dots",
     "name": "Email"

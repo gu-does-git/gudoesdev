@@ -1,35 +1,76 @@
 # gudoesdev
 
-Project heavily inspired by [AstroPaper](https://github.com/satnaing/astro-paper), [astro-cv-esquelete](https://github.com/mmouzo/astro-cv-esquelete) and [astro-aria](https://github.com/ccbikai/astro-aria)
+Personal portfolio and blog website built with modern web technologies. Bilingual (English & Portuguese), fully responsive, with a focus on performance and user experience.
+
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-## 🔥 Features
+## ✨ Features
 
-- [ ] multiple collections (projects, blog, work experience, certificates, contacts)
-- [ ] i18
-- [ ] type-safe markdown
-- [ ] super fast performance
-- [ ] accessible (Keyboard/VoiceOver)
-- [ ] responsive (mobile ~ desktops)
-- [ ] SEO-friendly
-- [ ] light & dark mode
-- [ ] fuzzy search
-- [ ] draft posts & pagination
-- [ ] sitemap & rss feed
-- [ ] followed best practices
-- [ ] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+### Implemented ✅
+- [x] **Multiple collections** - Projects and Blog posts
+- [x] **Bilingual (i18n)** - English & Portuguese with seamless language switching
+- [x] **Type-safe markdown** - Full TypeScript support for content
+- [x] **Super fast performance** - Static generation with Astro
+- [x] **Accessible** - ARIA labels, semantic HTML, keyboard navigation
+- [x] **Responsive design** - Mobile to desktop layouts
+- [x] **SEO-friendly** - Proper meta tags and structure
+- [x] **Light & Dark mode** - Theme switcher with persistence
+- [x] **Search functionality** - Real-time post and project search
+- [x] **Smooth animations** - Transitions and fade effects throughout
+- [x] **Individual post pages** - Full blog post viewing with metadata
+- [x] **Projects showcase** - Featured projects on homepage with details
+- [x] **Full projects listing page** - Complete projects grid with search
+- [x] **About page** - Professional profile with experience, education, certifications
+- [x] **Statistics section** - Animated counters for achievements
+- [x] **Tech stack showcase** - Interactive technology grid with icons
+- [x] **Social links** - GitHub, Twitter, Email integration
+- [x] **Language-aware routing** - Automatic locale detection and switching
+- [x] **Two-column layouts** - Modern hero section and about page design
+- [x] **Post tags system** - Categorized blog posts with tag navigation
+- [x] **Pill-styled components** - Professional card designs for content sections
+
+### Planned 📋
+- [ ] Dynamic OG image generation
+- [ ] RSS feed
+- [ ] Sitemap
+- [ ] Fuzzy search with FuseJS
+- [ ] Newsletter integration
 
 ## 💻 Tech Stack
 
-- [-] **Main Framework** - [Astro](https://astro.build/)
-- [-] **Type Checking** - [TypeScript](https://www.typescriptlang.org/)
-- [-] **Component Framework** - [ReactJS](https://reactjs.org/)
-- [-] **Code Formatting** - [Prettier](https://prettier.io/)
-- [-] **Linting** - [ESLint](https://eslint.org)
-- [-] **Styling** - [TailwindCSS](https://tailwindcss.com/)
-- [ ] **UI Components** - [DaisyUI](https://daisyui.com/)
-- [ ] **Fuzzy Search** - [FuseJS](https://fusejs.io/)
-- [ ] **Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)
-- [ ] **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)
+- **Main Framework** - [Astro](https://astro.build/)
+- **Type Checking** - [TypeScript](https://www.typescriptlang.org/)
+- **Component Framework** - [React](https://reactjs.org/)
+- **Styling** - [Tailwind CSS](https://tailwindcss.com/)
+- **Code Formatting** - [Prettier](https://prettier.io/)
+- **Icons** - [Astro Icon](https://www.astroicon.dev/) with Material Symbols & UIm icon sets
+- **Internationalization** - [Astro i18n](https://docs.astro.build/en/guides/internationalization/)
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+Visit `http://localhost:3000` to see your site.
+
+## ✅ Lighthouse Score
+
+<p align="center">
+  <a href="https://pagespeed.web.dev/report?url=https://gudoes.dev%2F&form_factor=desktop">
+    <img width="710" alt="gudoesdev Lighthouse Score" src="lighthouse-score.svg">
+  </a>
+</p>

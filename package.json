@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:coder": "astro dev --host 0.0.0.0",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -13,6 +14,8 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/react": "^3.4.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@iconify-json/arcticons": "^1.2.53",
+    "@iconify-json/logos": "^1.2.11",
     "@iconify-json/material-symbols": "^1.1.80",
     "@iconify-json/uim": "^1.1.9",
     "@types/react": "^18.3.2",

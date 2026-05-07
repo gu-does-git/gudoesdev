@@ -1,0 +1,44 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import SearchPosts from "../../../components/SearchPosts";
+import { getCollection } from "astro:content";
+
+const allPosts = (
+  await getCollection("posts", ({ id, data: { draft } }) => {
+    if (Astro.currentLocale === "pt-br") {
+      return id.includes("pt-br") && !draft;
+    }
+    return false;
+  })
+).sort(
+  (a, b) =>
+    new Date(b.data.pubDatetime).getTime() -
+    new Date(a.data.pubDatetime).getTime()
+);
+
+const postsData = allPosts.map(post => ({
+  id: post.id,
+  slug: post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  pubDatetime: post.data.pubDatetime.toISOString(),
+  author: post.data.author,
+  tags: post.data.tags,
+}));
+---
+
+<Layout title="Blog">
+  <main class="mx-auto max-w-4xl px-7 py-16 lg:py-24 lg:px-0">
+    <div class="mb-12">
+      <h1 class="mb-4 text-4xl font-bold dark:text-white lg:text-5xl">
+        Blog
+      </h1>
+      <p class="text-base text-neutral-600 dark:text-neutral-400">
+        Aqui estão meus últimos pensamentos e insights sobre desenvolvimento web,
+        engenharia de software e muito mais.
+      </p>
+    </div>
+
+    <SearchPosts client:load posts={postsData} locale="pt-br" />
+  </main>
+</Layout>

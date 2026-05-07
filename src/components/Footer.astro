@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon/components";
+import socials from "../content/etc/socials.json";
+
+const isPortuguese = Astro.currentLocale === "pt-br";
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
+>
+  <div
+    class="mx-auto max-w-4xl px-7 py-12 lg:px-0"
+  >
+    <div class="mb-8 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <!-- Content Section -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">
+          Gustavo Rocha
+        </h3>
+        <p class="max-w-xs text-sm text-neutral-600 dark:text-neutral-400">
+          {isPortuguese
+            ? "Engenheiro de software focado em desenvolvimento web."
+            : "Software engineer focused on web development."}
+        </p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex flex-col gap-3">
+        <p class="text-sm font-semibold text-neutral-900 dark:text-white">
+          {isPortuguese ? "Conecte-se" : "Connect"}
+        </p>
+        <div class="flex gap-3">
+          {
+            socials.map(social => (
+              <a
+                href={social.href}
+                title={`${social.name} Profile`}
+                target="_blank"
+                aria-label={`${social.name} Profile`}
+                class="transition-colors hover:text-green-600 dark:hover:text-green-500"
+              >
+                <Icon name={social.icon} class="h-5 w-5" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div
+      class="border-t border-neutral-200 pt-8 dark:border-neutral-800"
+    >
+      <div class="flex flex-col justify-between gap-4 text-center text-sm text-neutral-600 dark:text-neutral-400 md:flex-row md:items-center md:text-left">
+        <p>
+          © {currentYear}
+          <a
+            href="https://github.com/gu-does-git/gudoesdev"
+            class="transition-colors hover:text-green-600 dark:hover:text-green-500"
+            target="_blank"
+          >
+            gudoesdev
+          </a>
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 md:justify-start">
+          <span>
+            {isPortuguese ? "Construído com" : "Built with"}
+          </span>
+          <a
+            href="https://astro.build"
+            title="Astro"
+            target="_blank"
+            class="transition-opacity hover:opacity-80"
+          >
+            <Icon name="logos:astro-icon" class="h-5 w-5" />
+          </a>
+          <a
+            href="https://react.dev"
+            title="React"
+            target="_blank"
+            class="transition-opacity hover:opacity-80"
+          >
+            <Icon name="logos:react" class="h-5 w-5" />
+          </a>
+          <a
+            href="https://tailwindcss.com"
+            title="Tailwind CSS"
+            target="_blank"
+            class="transition-opacity hover:opacity-80"
+          >
+            <Icon name="logos:tailwindcss-icon" class="h-5 w-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

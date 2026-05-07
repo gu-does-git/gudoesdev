@@ -1,26 +1,29 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+
+const isPortuguese = Astro.currentLocale === "pt-br";
+
 const menus = [
   {
-    name: "Home",
+    name: isPortuguese ? "Início" : "Home",
     url: Astro.currentLocale
       ? getRelativeLocaleUrl(Astro.currentLocale, "/")
       : "/",
   },
   {
-    name: "Posts",
+    name: isPortuguese ? "Artigos" : "Posts",
     url: Astro.currentLocale
       ? getRelativeLocaleUrl(Astro.currentLocale, "/posts")
       : "/posts",
   },
   {
-    name: "Projects",
+    name: isPortuguese ? "Projetos" : "Projects",
     url: Astro.currentLocale
       ? getRelativeLocaleUrl(Astro.currentLocale, "/projects")
       : "/projects",
   },
   {
-    name: "About",
+    name: isPortuguese ? "Sobre" : "About",
     url: Astro.currentLocale
       ? getRelativeLocaleUrl(Astro.currentLocale, "/about")
       : "/about",
@@ -37,7 +40,7 @@ const menus = [
       return (
         <a
           href={menu.url}
-          class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
+          class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide transition-colors hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
         >
           {menu.name}
         </a>
