@@ -1,8 +1,8 @@
 ---
 author: Gustavo Rocha
 pubDatetime: 2022-09-01T15:22:00Z
-title: Ferramentas que uso para código melhor
-slug: better-coding
+title: Ferramentas que uso para programar melhor
+slug: ferramentas-que-uso-para-programar-melhor
 featured: true
 draft: false
 tags:
@@ -11,7 +11,7 @@ ogImage: ""
 description: Contando todos meus segredos neste! 😉
 ---
 
-# Ferramentas que uso para código melhor
+# Ferramentas que uso para programar melhor
 
 > TL;DR: Linters e Formatters
 
@@ -34,7 +34,7 @@ Acho que **li** em algum lugar que um Desenvolvedor Sênior geralmente tinha ess
 
 Então, enquanto estava transitando de um Desenvolvedor de Nível Médio para o papel de Sênior, era natural que começasse a trabalhar em direção a esses objetivos.
 
-E enquanto em minhas aventuras pela internet, encontrei algo chamado _[Linters](#o-que-é-um-linter)_ e _[Formatters](#o-que-é-um-formatter)_, que desempenharam um papel importante em eu conseguir esta posição como 🌟**Desenvolvedor Sênior**🌟.
+E em minhas aventuras pela internet, encontrei algo chamado _[Linters](#o-que-é-um-linter)_ e _[Formatters](#o-que-é-um-formatter)_, que desempenharam um papel importante em eu conseguir esta posição como 🌟**Desenvolvedor Sênior**🌟.
 
 Mas aí você pergunta:
 

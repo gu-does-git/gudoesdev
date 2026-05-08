@@ -2,7 +2,7 @@
 author: Gustavo Rocha
 pubDatetime: 2022-08-22T12:58:53Z
 title: Olá Mundo
-slug: hello-world
+slug: ola-mundo
 featured: false
 draft: false
 tags:
