@@ -23,7 +23,6 @@ export default function NumberCounter({
         if (entries[0].isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
           const startTime = Date.now();
-          const endTime = startTime + duration * 1000;
 
           const animate = () => {
             const now = Date.now();

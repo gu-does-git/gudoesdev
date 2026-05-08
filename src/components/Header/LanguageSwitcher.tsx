@@ -45,7 +45,6 @@ export default function LanguageSwitcher({
 
     // If we're on a post page, find the translated post
     if (postId && postsMap) {
-      const isPortuguese = postId.includes("pt-br");
       let translatedPostId: string | undefined;
 
       if (currentLocale === "en") {

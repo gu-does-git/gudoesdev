@@ -35,16 +35,6 @@ const allPosts = (
     new Date(b.data.pubDatetime).getTime() -
     new Date(a.data.pubDatetime).getTime()
 );
-
-const postsData = allPosts.map(post => ({
-  id: post.id,
-  slug: post.slug,
-  title: post.data.title,
-  description: post.data.description,
-  pubDatetime: post.data.pubDatetime.toISOString(),
-  author: post.data.author,
-  tags: post.data.tags,
-}));
 ---
 
 <Layout title={`Tag: ${decodedTag}`}>
