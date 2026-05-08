@@ -84,13 +84,13 @@ export default function SearchProjects({
         </div>
 
         {filteredProjects.length > 0 ? (
-          <div className="grid w-full gap-7 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid w-full grid-cols-1 gap-7 sm:grid-cols-2 md:grid-cols-3">
             {filteredProjects.map((project, index) => (
               <a
                 key={project.id}
                 href={project.url}
                 target="_blank"
-                className="group relative flex flex-col items-stretch rounded-2xl p-7 transition-transform duration-300 ease-out sm:p-3 animate-slide-in"
+                className="group relative flex flex-col items-stretch rounded-2xl p-3 transition-transform duration-300 ease-out sm:p-7 animate-slide-in"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}

@@ -4,6 +4,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 const isPortuguese = Astro.currentLocale === "pt-br";
 
 const menus = [
+
   {
     name: isPortuguese ? "Início" : "Home",
     url: Astro.currentLocale
@@ -31,16 +32,49 @@ const menus = [
 ];
 ---
 
+<style>
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+</style>
+
 <div
   id="menu"
-  class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-base"
+  class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start bg-white pb-4 pt-7 dark:bg-neutral-950 sm:relative sm:top-0 sm:flex sm:h-auto sm:w-auto sm:flex-row sm:bg-transparent sm:py-0 sm:pr-0 sm:pt-0 sm:dark:bg-transparent"
 >
   {
     menus.map(menu => {
       return (
         <a
           href={menu.url}
-          class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide transition-colors hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
+          class="relative flex w-full items-center justify-center px-3 py-2 text-center text-sm font-medium tracking-wide transition-colors hover:text-green-600 dark:hover:text-green-500 sm:mb-0 sm:py-0 sm:text-base md:w-auto"
+          onclick="document.getElementById('menu')?.classList.add('hidden')"
         >
           {menu.name}
         </a>

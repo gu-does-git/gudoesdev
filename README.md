@@ -33,9 +33,29 @@ Personal portfolio and blog website built with modern web technologies. Bilingua
 - [x] **Pill-styled components** - Professional card designs for content sections
 
 ### Planned 📋
+- [ ] Create new posts
+- [ ] Change website font with Astro Font or astro-google-fonts-optimizer
+- [ ] Mobile responsiveness audit and fixes (test across all breakpoints)
+- [ ] Standardize icon sets and styling across components
+- [ ] Share buttons on blog posts
+- [ ] astro-robots-txt - Robots.txt generation
+- [ ] @astrojs/sitemap - Sitemap generation
+- [ ] @astrojs/rss - RSS feed for posts
+- [ ] astro-compress - Asset compression
+- [ ] astro-seo - Enhanced SEO control
+- [ ] astro-analytics - Analytics integration
+- [ ] astro-vtbot - view transitions
+- [ ] astro-breadcrumbs - Breadcrumb navigation
+- [ ] Core Web Vitals optimization
+- [ ] View counter for posts
+- [ ] Search.json for client-side search
+- [ ] Syntax highlighting improvements
+- [ ] SEO enhancements
+- [ ] Code snippet copy button
+- [ ] Custom 404 page
+- [ ] Donations/Support page (Ko-fi, Buy Me A Coffee)
+- [ ] Video content support
 - [ ] Dynamic OG image generation
-- [ ] RSS feed
-- [ ] Sitemap
 - [ ] Fuzzy search with FuseJS
 - [ ] Newsletter integration
 

@@ -61,14 +61,14 @@ const allProjects = (
     }
   </p>
   <div
-    class="mt-7 grid w-full items-stretch gap-7 sm:grid-cols-2 md:grid-cols-3"
+    class="mt-7 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 md:grid-cols-3"
   >
     {
       allProjects.map(project => (
         <a
           href={project.data.url}
           target="_blank"
-          class="project-card h-100 group relative flex flex-col items-stretch rounded-2xl p-7 transition-transform duration-300 ease-out sm:p-3"
+          class="project-card h-100 group relative flex flex-col items-stretch rounded-2xl p-3 transition-transform duration-300 ease-out sm:p-7"
         >
           <span class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-neutral-300 group-hover:bg-white dark:group-hover:border-neutral-600 dark:group-hover:bg-neutral-950" />
           <span class="absolute inset-0 z-10 block h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600" />

@@ -3,6 +3,7 @@ import Logo from "./Header/Logo.astro";
 import ThemeSwitcher from "./Header/ThemeSwitcher.astro";
 import Menu from "./Header/Menu.astro";
 import LanguageSwitcher from "./Header/LanguageSwitcher";
+import MobileMenuToggle from "./Header/MobileMenuToggle";
 import { getCollection } from "astro:content";
 
 interface Props {
@@ -54,8 +55,9 @@ enPosts.forEach(enPost => {
   >
     <Logo />
     <nav
-      class="relative z-30 flex w-full flex-row-reverse justify-start text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:justify-end"
+      class="relative z-30 flex w-full flex-row-reverse items-center justify-start gap-2 text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:justify-end sm:gap-0"
     >
+      <MobileMenuToggle client:load />
       <Menu />
       <ThemeSwitcher />
       <LanguageSwitcher
