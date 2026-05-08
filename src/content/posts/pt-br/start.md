@@ -9,6 +9,7 @@ tags:
   - post
   - conselhos
 ogImage: ""
+image: ""
 description: O começo de tudo.
 ---
 

@@ -8,6 +8,7 @@ draft: false
 tags:
   - code_quality
 ogImage: ""
+image: ""
 description: Contando todos meus segredos neste! 😉
 ---
 

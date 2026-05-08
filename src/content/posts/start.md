@@ -9,6 +9,7 @@ tags:
   - post
   - advice
 ogImage: ""
+image: ""
 description: The start of it all.
 ---
 
