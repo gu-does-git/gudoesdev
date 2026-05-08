@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Themes from "astro-themes";
 import PageCustomEffect from "../components/PageCustomEffect.astro";
 import { SITE } from "../config";
+import { AstroFont } from "astro-font";
 
 interface Props {
   title: string;
@@ -19,6 +20,28 @@ const lang = Astro.currentLocale;
 <html lang={lang}>
   <head>
     <Themes />
+    <AstroFont config={[
+      {
+          src: [],
+          name: "Plus Jakarta Sans",
+          // Google Fonts URL
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      {
+          src: [],
+          name: "JetBrains Mono",
+          // Google Fonts URL
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap',
+          preload: true,
+          display: "swap",
+          selector: "code, pre",
+          fallback: "monospace",
+        },
+    ]} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />

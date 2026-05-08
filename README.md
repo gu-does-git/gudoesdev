@@ -18,6 +18,7 @@ Personal portfolio and blog website built with modern web technologies. Bilingua
 - [x] **Responsive design** - Mobile to desktop layouts
 - [x] **Mobile hamburger menu** - Animated navigation toggle with slide animations
 - [x] **Mobile responsiveness audit** - Grid, padding, and spacing fixes across all breakpoints
+- [x] **Custom fonts with astro-font** - Plus Jakarta Sans for body, JetBrains Mono for code
 - [x] **SEO-friendly** - Proper meta tags and structure
 - [x] **Light & Dark mode** - Theme switcher with persistence
 - [x] **Search functionality** - Real-time post and project search
@@ -36,7 +37,6 @@ Personal portfolio and blog website built with modern web technologies. Bilingua
 
 ### Planned 📋
 - [ ] Create new posts
-- [ ] Change website font with Astro Font or astro-google-fonts-optimizer
 - [ ] Standardize icon sets and styling across components
 - [ ] Share buttons on blog posts
 - [ ] astro-robots-txt - Robots.txt generation
