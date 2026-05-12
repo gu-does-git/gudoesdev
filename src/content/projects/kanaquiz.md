@@ -8,7 +8,7 @@ tags:
   - JavaScript
   - Education
   - Japanese
-featured: true
+featured: false
 ---
 
 Kana Quiz is an interactive learning tool built with React.js designed to help users master Japanese kana characters through engaging quizzes and interactive exercises. The application provides a smooth learning experience with instant feedback on answers.
