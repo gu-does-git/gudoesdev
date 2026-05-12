@@ -17,7 +17,7 @@ const lang = Astro.currentLocale;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="overflow-x-hidden">
   <head>
     <Themes />
     <AstroFont config={[
@@ -43,7 +43,7 @@ const lang = Astro.currentLocale;
         },
     ]} />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
