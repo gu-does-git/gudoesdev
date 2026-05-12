@@ -1,7 +1,7 @@
 ---
 name: "Dojo"
 description: "Framework de exercícios para aprendizagem de japonês. Uma plataforma focada em performance para praticar habilidades japonesas através de exercícios interativos. Construído com Astro.js para performance excepcional e excelente experiência."
-url: "https://github.com/gu-does-git/dojo"
+url: "https://japanese.gudoes.dev"
 image: "/images/dojo.jpg"
 tags:
   - Astro.js

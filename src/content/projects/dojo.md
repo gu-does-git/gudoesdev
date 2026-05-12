@@ -1,7 +1,7 @@
 ---
 name: "Dojo"
 description: "Japanese language learning drills framework. A performance-focused platform for practicing Japanese skills through interactive exercises. Built with Astro.js for exceptional speed and great UX."
-url: "https://github.com/gu-does-git/dojo"
+url: "https://japanese.gudoes.dev"
 image: "/images/dojo.jpg"
 tags:
   - Astro.js
