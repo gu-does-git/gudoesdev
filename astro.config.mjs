@@ -10,5 +10,9 @@ export default defineConfig({
   i18n: {
     defaultLocale: "en",
     locales: ["en", "pt-br"]
-  }
+  },
+  redirects: {
+    "/resume": "/about",
+    "/pt-br/resume": "/pt-br/about",
+  },
 });
